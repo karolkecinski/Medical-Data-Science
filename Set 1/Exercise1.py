@@ -29,19 +29,6 @@ class Exercise:
             result = result + " " + word
         return result
 
-    def sendRequest(self, method, endpoint):
-        return request(
-            method,
-            endpoint,
-            headers = { },
-            stream=True
-        )
-
-    def distanceToSun(self):
-        planet = input("Please, typle a planet name:")
-        endpoint = 'https://api.le-systeme-solaire.net/en/'
-        res = self.sendRequest('GET', endpoint)
-
 ex = Exercise()
 print(ex.factorial(11))
 
