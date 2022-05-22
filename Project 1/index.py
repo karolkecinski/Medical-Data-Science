@@ -24,6 +24,7 @@ def load_data(path: str):
     for file_name_ext in os.listdir(path):
         if 'label' in file_name_ext.lower():
             labels = np.load(path + file_name_ext)
+            #print(max(labels)) #54
             continue
 
         file_name = file_name_ext[:-4]
