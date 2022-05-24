@@ -19,7 +19,7 @@ model.add(Conv2D(64, kernel_size = (3, 3), activation='relu', input_shape=input_
 #model.add(MaxPooling2D(pool_size = (2,2), padding = 'valid', strides = (1,1)))
 
 model.add(Flatten())
-model.add(Dense(64))
+model.add(Dense(64, activation='relu'))
 model.add(Dense(64))
 
 model.add(Dense(1))
@@ -27,4 +27,4 @@ model.add(Activation('sigmoid'))
 
 model.compile(loss="binary_crossentropy", optimizer = "adam", metrics = ['accuracy'])
 
-model.fit(training_data.data, training_data.labels, epochs = 3, batch_size = 64, validation_split = 0.1)
+model.fit(training_data.data, training_data.labels, epochs = 15, batch_size = 100, validation_split = 0.15)
